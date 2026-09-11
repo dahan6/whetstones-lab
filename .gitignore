@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Local experiment artifacts
+*.log
+results/local_*.jsonl
+telemetry/local_*.jsonl
+
+# Checkpoints are RELEASED in this repo (research artifacts / priority
+# timestamp). Only exclude newly trained local outputs:
+checkpoints/*_local.pt
+checkpoints/*_demo.pt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

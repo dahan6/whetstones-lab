@@ -1,0 +1,37 @@
+# L0 保育级规则集：训练起步用（替换完整默认规则集）
+# 只保留少量高置信恶意模式，给弱 agent 留出学习空间。
+# 随防御等级提升逐步恢复完整 falco_rules.yaml。
+
+- rule: Training Execution from Tmpfs
+  desc: 从 /dev/shm 或 /tmp 执行（agent 落点），排除已知良性脚本
+  condition: >
+    evt.type=execve
+    and (proc.exepath startswith /dev/shm
+         or (proc.exepath startswith /tmp
+             and not proc.exepath in (/tmp/benign_workload.sh, /tmp/day_rhythm.sh,
+                                      /tmp/night_rhythm.sh, /tmp/lado-responder,
+                                      /tmp/bee, /tmp/tracee, /tmp/falco)))
+  output: training_tmpfs_exec (proc=%proc.name exe=%proc.exepath)
+  priority: WARNING
+  enabled: true
+
+- rule: Training Base64 Decode
+  desc: base64 -d 解码
+  condition: evt.type=execve and proc.name=base64 and proc.args contains "-d"
+  output: training_base64 (proc=%proc.name args=%proc.args)
+  priority: WARNING
+  enabled: true
+
+- rule: Training Cron Modify
+  desc: cron 修改（持久化）
+  condition: evt.type=execve and proc.name in (crontab, at) and proc.args contains "-e"
+  output: training_cron (proc=%proc.name args=%proc.args)
+  priority: WARNING
+  enabled: true
+
+- rule: Training Sensitive Write
+  desc: 写 systemd 用户单元（持久化点）
+  condition: evt.type in (open, openat, openat2) and evt.is_open_write=true and fd.name startswith /home/ and fd.name contains .config/systemd/user
+  output: training_persist (proc=%proc.name file=%fd.name)
+  priority: WARNING
+  enabled: true

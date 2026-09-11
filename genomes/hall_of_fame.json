@@ -1,0 +1,44 @@
+{
+  "description": "Toxoplasma (弓形虫) hall-of-fame genome library — pure data, no implementation. Genome schema: docs/弓形虫-系统文档-v0.md §2 (11 gene loci + open-locus FNV projection).",
+  "schema_ref": "docs/弓形虫-系统文档-v0.md §2",
+  "r1_population": [
+    {"morph_id": "M0-reference",       "step_mu": 1.1, "step_sigma": 0.85},
+    {"morph_id": "M1-fast-flat",       "step_mu": 0.7, "step_sigma": 0.5},
+    {"morph_id": "M2-slow-organic",    "step_mu": 1.6, "step_sigma": 0.85},
+    {"morph_id": "M3-jittery",         "step_mu": 1.1, "step_sigma": 1.3},
+    {"morph_id": "M4-jumpy-urgent",    "step_mu": 1.3, "step_sigma": 1.0, "task_urgency": 0.15},
+    {"morph_id": "M5-pressure-averse", "step_mu": 1.1, "step_sigma": 0.85, "pressure_sat": 3.0, "pressure_gain": 5.0}
+  ],
+  "r2_additions": [
+    {"morph_id": "M6-super-jittery", "step_mu": 1.1, "step_sigma": 1.6},
+    {"morph_id": "M7-slow-ghost",    "step_mu": 2.2, "step_sigma": 0.9},
+    {"morph_id": "M8-burst-silence", "step_mu": 1.1, "step_sigma": 0.85, "burst_prob": 0.15, "burst_mu": 2.8}
+  ],
+  "g0_tournament_variants": {
+    "_note": "Reconstructed from docs/EXPERIMENTS.md §26 variant table; all 8 variants 0% survival at L4 (hunt 90s, wave 900s).",
+    "variants": [
+      {"morph_id": "G0-base",                 "step_mu": 1.1, "step_sigma": 0.85},
+      {"morph_id": "G1-sig15",                "step_mu": 1.1, "step_sigma": 1.5},
+      {"morph_id": "G2-sig18",                "step_mu": 1.1, "step_sigma": 1.8},
+      {"morph_id": "G3-sig20",                "step_mu": 1.1, "step_sigma": 2.0},
+      {"morph_id": "G4-sig16-jit",            "step_mu": 1.1, "step_sigma": 1.6, "sigma_jitter": 0.25},
+      {"morph_id": "G5-sig18-jit-burst",      "step_mu": 1.1, "step_sigma": 1.8, "sigma_jitter": 0.25, "burst_prob": 0.15, "burst_mu": 3.0},
+      {"morph_id": "G6-new-loci",             "step_mu": 1.1, "step_sigma": 1.6, "open_loci": 2, "_comment": "12 gene loci via FNV-projected junk keys"},
+      {"morph_id": "G7-policy-v4",            "step_mu": 1.1, "step_sigma": 0.85, "policy_ref": "weights_v4"}
+    ]
+  },
+  "hall_of_fame": {
+    "_note": "First fitter morph: 100% survival x3 reps at L4 (docs/EXPERIMENTS.md §27). Reconstructed from the §27 variant table; step_mu inherited from the M6/H2 line (1.1).",
+    "H7-full": {
+      "morph_id": "H7-full",
+      "step_mu": 1.1,
+      "step_sigma": 1.6,
+      "sigma_jitter": 0.25,
+      "max_sleep_s": 120,
+      "burst_prob": 0.15,
+      "burst_mu": 3.0,
+      "landing": "~/tools",
+      "binary_name": "node"
+    }
+  }
+}

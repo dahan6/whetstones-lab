@@ -1,0 +1,60 @@
+# Adaptive Agent Simulation Configuration
+# All execution primitives are SIMULATED for research/validation only.
+
+environment:
+  max_steps: 1000
+  state_dim: 16
+  scan_duration_mean: 30
+  scan_interval_mean: 200
+  defense_level: 1            # 0=low, 1=medium, 2=high, 3=paranoid
+  seed: null
+
+perception:
+  signal_dim: 16
+  hidden_dim: 64
+  codebook_size: 256
+  embedding_dim: 64
+  commitment_cost: 0.25
+  decay: 0.99                 # EMA decay for codebook
+  cnn_frontend: false         # optional CNN n-gram frontend (not used in v0)
+
+decision:
+  context_length: 32
+  d_model: 128
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 256
+  dropout: 0.1
+  policy_output: 5            # [sleep, probe, migrate, execute_task, communicate]
+  use_linear_policy: true
+
+training:
+  # Phase A: Offline VQ-VAE pretraining (unsupervised)
+  offline_epochs: 50
+  offline_batch_size: 128
+  offline_lr: 0.001
+  offline_samples: 10000
+
+  # Phase B: Simulation pretraining (shaped reward, REINFORCE)
+  sim_episodes: 500
+  sim_lr: 0.001
+
+  # Phase C: Online Evolution Strategy (ES)
+  es_generations: 100
+  es_population: 24
+  es_top_k: 8
+  es_sigma: 0.08
+  es_lr: 0.03
+  es_episodes_per_worker: 3
+
+  # Cost Critic / Shield
+  cost_threshold: 0.6
+  detection_weight: 1.0
+  stability_weight: 0.3
+  exposure_weight: 0.5
+
+agent:
+  gamma: 0.99
+  sleep_baseline: 0.01
+  task_reward: 1.0
+  death_penalty: -10.0

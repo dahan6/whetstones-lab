@@ -1,0 +1,19 @@
+<!--
+  LADO 靶场隔离网络
+  - 无 <forward> 元素 = libvirt isolated 模式：无任何 NAT/路由转发，VM 流量出不了这张网
+  - dnsmasq 仅在本网段提供 DHCP/DNS
+  - 宿主机通过 virbr-lado (192.0.2.1) 参与本网，充当管理/遥测节点
+  额外兜底：部署后由 scripts/lockdown.sh 加 iptables FORWARD DROP 规则
+-->
+<network>
+  <name>lado-isolated</name>
+  <uuid>5f2c9a1e-7b3d-4e8f-9c6a-2d1b0e4f8a55</uuid>
+  <bridge name='virbr-lado' stp='on' delay='0'/>
+  <mac address='52:54:00:1a:d0:00'/>
+  <domain name='lado.local' localOnly='yes'/>
+  <ip address='192.0.2.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.0.2.100' end='192.0.2.199'/>
+    </dhcp>
+  </ip>
+</network>

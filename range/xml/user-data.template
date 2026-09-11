@@ -1,0 +1,33 @@
+#cloud-config
+# LADO 靶场基础镜像 cloud-init
+# 通过 virt-install --cloud-init 或 -cloudinit user-data= 注入
+hostname: VM_HOSTNAME_PLACEHOLDER
+manage_etc_hosts: true
+
+users:
+  - name: range
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: false
+    plain_text_passwd: 'lado-range-2026'
+    ssh_authorized_keys:
+      - SSH_PUBKEY_PLACEHOLDER
+
+# 隔离网内无公网，apt 源不可达——所有软件包必须在建镜像阶段预装，
+# 或做成本地 .deb 包通过 192.0.2.1 上的管理节点分发。
+package_update: false
+package_upgrade: false
+
+write_files:
+  - path: /etc/rsyslog.d/90-lado-forward.conf
+    content: |
+      *.* action(type="omfwd" target="192.0.2.1" port="514" protocol="tcp" action.resumeRetryCount="-1" queue.type="linkedList" queue.filename="lado_fwd" queue.saveOnShutdown="on")
+  - path: /etc/motd
+    content: |
+      === LADO Cyber Range ===
+      隔离实验环境 / 无出网路由
+      防御层级: DEFENSE_TIER_PLACEHOLDER
+
+runcmd:
+  - systemctl restart rsyslog
+  - echo "$(date -Is) cloud-init done tier=DEFENSE_TIER_PLACEHOLDER" >> /var/log/range-init.log

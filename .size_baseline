@@ -1,0 +1,7 @@
+# bee 二进制体积基线（cargo build --release）
+# CI 检查不超过基线 +10%
+# 格式：二进制名 字节数
+sysmon 634456
+mutate 327920
+rebirth 373624
+loader 327016
