@@ -1,0 +1,43 @@
+{
+  "eye_id": "E-v1",
+  "faces": {
+    "P0_adaptive": {"on": 1},
+    "P1_pattern": {"on": 1, "match_threshold": 0.8},
+    "P2_context": {"on": 1, "tau_percentile": 99.5},
+    "P3_rarity": {"on": 1},
+    "P4_temporal": {"on": 1, "cv_low": 1.5, "min_events": 20},
+    "P5_adaptive_low": {"on": 1},
+    "P6_burst": {"on": 1, "threshold": 0.55},
+    "P7_seqood": {"on": 1, "threshold": 4.46},
+    "P8_anatomy": {"on": 1, "l1_threshold": 0.7, "l2_sim_floor": 0.985,
+                    "l3_min_files": 3, "l3_window_s": 60}
+  },
+  "models": {
+    "rhythm": {"ref": "eye_rhythm.pt"},
+    "meta": {"ref": "eye_meta_v2.pt", "danger_threshold": 0.030},
+    "anatomy_l1": {"ref": "eye_anatomy.npz"},
+    "anatomy_l2": {"ref": "lineage_index.json"},
+    "threat_memory": {"on": 1, "distance_max": 1.0}
+  },
+  "windows": {
+    "hunt_period_s": 90,
+    "wave_period_s": 480,
+    "rescan_delay_s": 60,
+    "chain_window_s": 180
+  },
+  "organs": {
+    "skewness": {"on": 0, "tau": null},
+    "ks_distance": {"on": 0, "tau": null},
+    "cross_host": {"on": 0, "min_hosts": 2, "corr_tau": 0.7}
+  },
+  "hunt": {
+    "kill_wipe": 0.6,
+    "freeze_quarantine": 0.2,
+    "evict_landing": 0.2,
+    "cooldown_s": 300
+  },
+  "_fixed": {
+    "lambda_fpr_cost": 10
+  },
+  "_fitness": "detection_rate - 10 * false_positive_rate"
+}

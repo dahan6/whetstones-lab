@@ -142,3 +142,17 @@ Notes:
 
 Maintainer: dahanxinshen@outlook.com — see `SECURITY.md` for vulnerability
 and abuse reporting.
+
+## Update 2026-09-14/15
+
+- `training/orchestrator/`: hunter v2 (evidence-based authorization,
+  connect-beacon face with telemetry genealogy, dual-track conviction where
+  the trained rhythm/meta models can convict beyond the legacy CV gate),
+  `model_judge.py` (live model adjudication), `new_faces.py` (network
+  fan-out + one-shot combo faces).
+- `src/eye/` + `models/eye/`: anatomy face (byte-profile MLP / weight
+  lineage index / load-burst + memory scan), eye genome (`eye.json`),
+  blue evolution driver, trained checkpoints (rhythm ×2, meta v2, seqood
+  GRU, anatomy, lineage index).
+- `results/rounds/`: sanitized round addendum (E-L/E-M/E-N/E-H′), E-L arm
+  results (JSONL), Axelsson curve data.

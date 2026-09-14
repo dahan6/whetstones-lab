@@ -1,0 +1,321 @@
+{
+ "e1": {
+  "benign_rate_per_day": 330949.0,
+  "curves": {
+   "s0.3": [
+    {
+     "tau_quantile": 0.9,
+     "tau": 1.101,
+     "alerts_per_day": 34230.5,
+     "benign_fpr": 0.10343,
+     "detection_rate": 0.1168
+    },
+    {
+     "tau_quantile": 0.95,
+     "tau": 1.188,
+     "alerts_per_day": 17799.9,
+     "benign_fpr": 0.05378,
+     "detection_rate": 0.0638
+    },
+    {
+     "tau_quantile": 0.98,
+     "tau": 1.33,
+     "alerts_per_day": 8134.8,
+     "benign_fpr": 0.02458,
+     "detection_rate": 0.0381
+    },
+    {
+     "tau_quantile": 0.99,
+     "tau": 1.462,
+     "alerts_per_day": 5154.7,
+     "benign_fpr": 0.01558,
+     "detection_rate": 0.0295
+    },
+    {
+     "tau_quantile": 0.995,
+     "tau": 2.057,
+     "alerts_per_day": 3463.3,
+     "benign_fpr": 0.01046,
+     "detection_rate": 0.0122
+    },
+    {
+     "tau_quantile": 0.998,
+     "tau": 2.245,
+     "alerts_per_day": 2657.9,
+     "benign_fpr": 0.00803,
+     "detection_rate": 0.0101
+    },
+    {
+     "tau_quantile": 0.999,
+     "tau": 2.321,
+     "alerts_per_day": 2335.7,
+     "benign_fpr": 0.00706,
+     "detection_rate": 0.0091
+    }
+   ],
+   "s1.13": [
+    {
+     "tau_quantile": 0.9,
+     "tau": 1.101,
+     "alerts_per_day": 34230.5,
+     "benign_fpr": 0.10343,
+     "detection_rate": 0.1016
+    },
+    {
+     "tau_quantile": 0.95,
+     "tau": 1.188,
+     "alerts_per_day": 17799.9,
+     "benign_fpr": 0.05378,
+     "detection_rate": 0.0563
+    },
+    {
+     "tau_quantile": 0.98,
+     "tau": 1.33,
+     "alerts_per_day": 8134.8,
+     "benign_fpr": 0.02458,
+     "detection_rate": 0.039
+    },
+    {
+     "tau_quantile": 0.99,
+     "tau": 1.462,
+     "alerts_per_day": 5154.7,
+     "benign_fpr": 0.01558,
+     "detection_rate": 0.0308
+    },
+    {
+     "tau_quantile": 0.995,
+     "tau": 2.057,
+     "alerts_per_day": 3463.3,
+     "benign_fpr": 0.01046,
+     "detection_rate": 0.0132
+    },
+    {
+     "tau_quantile": 0.998,
+     "tau": 2.245,
+     "alerts_per_day": 2657.9,
+     "benign_fpr": 0.00803,
+     "detection_rate": 0.01
+    },
+    {
+     "tau_quantile": 0.999,
+     "tau": 2.321,
+     "alerts_per_day": 2335.7,
+     "benign_fpr": 0.00706,
+     "detection_rate": 0.0095
+    }
+   ],
+   "s1.25": [
+    {
+     "tau_quantile": 0.9,
+     "tau": 1.101,
+     "alerts_per_day": 34230.5,
+     "benign_fpr": 0.10343,
+     "detection_rate": 0.1108
+    },
+    {
+     "tau_quantile": 0.95,
+     "tau": 1.188,
+     "alerts_per_day": 17799.9,
+     "benign_fpr": 0.05378,
+     "detection_rate": 0.0695
+    },
+    {
+     "tau_quantile": 0.98,
+     "tau": 1.33,
+     "alerts_per_day": 8134.8,
+     "benign_fpr": 0.02458,
+     "detection_rate": 0.0432
+    },
+    {
+     "tau_quantile": 0.99,
+     "tau": 1.462,
+     "alerts_per_day": 5154.7,
+     "benign_fpr": 0.01558,
+     "detection_rate": 0.0329
+    },
+    {
+     "tau_quantile": 0.995,
+     "tau": 2.057,
+     "alerts_per_day": 3463.3,
+     "benign_fpr": 0.01046,
+     "detection_rate": 0.0148
+    },
+    {
+     "tau_quantile": 0.998,
+     "tau": 2.245,
+     "alerts_per_day": 2657.9,
+     "benign_fpr": 0.00803,
+     "detection_rate": 0.0123
+    },
+    {
+     "tau_quantile": 0.999,
+     "tau": 2.321,
+     "alerts_per_day": 2335.7,
+     "benign_fpr": 0.00706,
+     "detection_rate": 0.0118
+    }
+   ],
+   "s1.75": [
+    {
+     "tau_quantile": 0.9,
+     "tau": 1.101,
+     "alerts_per_day": 34230.5,
+     "benign_fpr": 0.10343,
+     "detection_rate": 0.1059
+    },
+    {
+     "tau_quantile": 0.95,
+     "tau": 1.188,
+     "alerts_per_day": 17799.9,
+     "benign_fpr": 0.05378,
+     "detection_rate": 0.0639
+    },
+    {
+     "tau_quantile": 0.98,
+     "tau": 1.33,
+     "alerts_per_day": 8134.8,
+     "benign_fpr": 0.02458,
+     "detection_rate": 0.0392
+    },
+    {
+     "tau_quantile": 0.99,
+     "tau": 1.462,
+     "alerts_per_day": 5154.7,
+     "benign_fpr": 0.01558,
+     "detection_rate": 0.0294
+    },
+    {
+     "tau_quantile": 0.995,
+     "tau": 2.057,
+     "alerts_per_day": 3463.3,
+     "benign_fpr": 0.01046,
+     "detection_rate": 0.0113
+    },
+    {
+     "tau_quantile": 0.998,
+     "tau": 2.245,
+     "alerts_per_day": 2657.9,
+     "benign_fpr": 0.00803,
+     "detection_rate": 0.0101
+    },
+    {
+     "tau_quantile": 0.999,
+     "tau": 2.321,
+     "alerts_per_day": 2335.7,
+     "benign_fpr": 0.00706,
+     "detection_rate": 0.0098
+    }
+   ]
+  }
+ },
+ "g5elite": {
+  "t0": {
+   "benign_rate_per_day": 2710221.0,
+   "curve": [
+    {
+     "tau_quantile": 0.9,
+     "tau": 1.067,
+     "alerts_per_day": 768748.8,
+     "benign_fpr": 0.28365,
+     "detection_rate": 0.3195
+    },
+    {
+     "tau_quantile": 0.95,
+     "tau": 1.202,
+     "alerts_per_day": 674236.4,
+     "benign_fpr": 0.24878,
+     "detection_rate": 0.2856
+    },
+    {
+     "tau_quantile": 0.98,
+     "tau": 1.28,
+     "alerts_per_day": 664953.5,
+     "benign_fpr": 0.24535,
+     "detection_rate": 0.282
+    },
+    {
+     "tau_quantile": 0.99,
+     "tau": 1.305,
+     "alerts_per_day": 664232.1,
+     "benign_fpr": 0.24508,
+     "detection_rate": 0.2816
+    },
+    {
+     "tau_quantile": 0.995,
+     "tau": 1.332,
+     "alerts_per_day": 663173.9,
+     "benign_fpr": 0.24469,
+     "detection_rate": 0.2811
+    },
+    {
+     "tau_quantile": 0.998,
+     "tau": 1.351,
+     "alerts_per_day": 662163.9,
+     "benign_fpr": 0.24432,
+     "detection_rate": 0.2807
+    },
+    {
+     "tau_quantile": 0.999,
+     "tau": 1.373,
+     "alerts_per_day": 661250.0,
+     "benign_fpr": 0.24398,
+     "detection_rate": 0.2804
+    }
+   ]
+  },
+  "t3": {
+   "benign_rate_per_day": 264199.0,
+   "curve": [
+    {
+     "tau_quantile": 0.9,
+     "tau": 1.269,
+     "alerts_per_day": 252259.9,
+     "benign_fpr": 0.95481,
+     "detection_rate": 0.6367
+    },
+    {
+     "tau_quantile": 0.95,
+     "tau": 1.286,
+     "alerts_per_day": 252259.9,
+     "benign_fpr": 0.95481,
+     "detection_rate": 0.6336
+    },
+    {
+     "tau_quantile": 0.98,
+     "tau": 1.936,
+     "alerts_per_day": 249385.7,
+     "benign_fpr": 0.94393,
+     "detection_rate": 0.5971
+    },
+    {
+     "tau_quantile": 0.99,
+     "tau": 2.053,
+     "alerts_per_day": 247838.1,
+     "benign_fpr": 0.93808,
+     "detection_rate": 0.596
+    },
+    {
+     "tau_quantile": 0.995,
+     "tau": 2.132,
+     "alerts_per_day": 247617.0,
+     "benign_fpr": 0.93724,
+     "detection_rate": 0.5956
+    },
+    {
+     "tau_quantile": 0.998,
+     "tau": 2.193,
+     "alerts_per_day": 247617.0,
+     "benign_fpr": 0.93724,
+     "detection_rate": 0.5955
+    },
+    {
+     "tau_quantile": 0.999,
+     "tau": 2.218,
+     "alerts_per_day": 247617.0,
+     "benign_fpr": 0.93724,
+     "detection_rate": 0.5955
+    }
+   ]
+  }
+ }
+}
